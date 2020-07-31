@@ -131,8 +131,7 @@ async function commitChanges() {
 	addFiles(`./`)
 		.pipe(git.commit(GIT_MESSAGE)
 			.on(`end`, async () => {
-				await publishChanges();
-				Promise.resolve(console.log(`Files commited successfully.`))
+				Promise.resolve(await publishChanges(), console.log(`Files commited successfully.`))
 			})
 		);
 }
