@@ -1,0 +1,26 @@
+# Here put the files that don't need to be commited
+
+# MAC
+.DS_Store
+
+# NPM
+/node_modules/**/.bin/
+/node_modules/uws/build_log.txt
+/node_modules/node-sass/vendor/
+/node_modules/@babel/parser/bin/babel-parser.js
+/node_modules/istanbul-lib-instrument/node_modules/semver/bin/semver.js
+/node_modules/jsesc/bin/jsesc
+/node_modules/json5/lib/cli.js
+/node_modules/make-dir/node_modules/semver/bin/semver.js
+
+# Generated
+/dist/
+
+# Sublime
+*.sublime*
+
+# Android VM launcher
+android.cmd
+
+# Karma
+/coverage/

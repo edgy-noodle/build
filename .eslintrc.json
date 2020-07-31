@@ -1,0 +1,48 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+        "afterAll": false,
+        "afterEach": false,
+        "beforeAll": false,
+        "beforeEach": false,
+        "describe": false,
+        "expect": false,
+        "it": false,
+        "xit": false
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "rules": {
+        "arrow-spacing": 1,
+        "eqeqeq": 2,
+        "guard-for-in": 1,
+        "no-await-in-loop": 1,
+        "no-else-return": 1,
+        "no-eval": 2,
+        "no-extra-parens": 1,
+        "no-implicit-globals": [ "error", { "lexicalBindings": true } ],
+        "no-loop-func": 1,
+        "no-multi-spaces": 2,
+        "no-new": 2,
+        "no-new-func": 2,
+        "no-new-wrappers": 2,
+        "no-param-reassign": 2,
+        "no-return-assign": 2,
+        "no-script-url": 2,
+        "no-self-compare": 2,
+        "no-sequences": 2,
+        "no-undef-init": 2,
+        "no-useless-concat": 2,
+        "no-useless-return": 2,
+        "no-use-before-define": [ "error", "nofunc" ],
+        "no-var": 2,
+        "yoda": 1
+    }
+}
