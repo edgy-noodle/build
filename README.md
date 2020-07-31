@@ -3,7 +3,7 @@
 
 ## To run the code on your computer:
 
-1. Install [Node.js v14.4.0](https://nodejs.org/en/).
+1. Install [Node.js v14.6.0](https://nodejs.org/en/).
 2. Install [Git](https://git-scm.com/).
 3. Open CMD/PowerShell (PC) / Terminal (Mac/Unix).
 4. Change the directory to the one you want to put the project in: in your command prompt, type `cd <directory>`.
