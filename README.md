@@ -5,7 +5,7 @@
 
 1. Install [Node.js v14.4.0](https://nodejs.org/en/).
 2. Install [Git](https://git-scm.com/).
-3. Open CMD (PC) / Terminal (Mac/Unix).
+3. Open CMD/PowerShell (PC) / Terminal (Mac/Unix).
 4. Change the directory to the one you want to put the project in: in your command prompt, type `cd <directory>`.
 5. Clone the source repository to your computer: `git clone <url> <name>`, where `<url>` is the **GitHub** URL and `<name>` is the name of your choice.
 6. Go to the project directory: `cd <name>`.
