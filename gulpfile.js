@@ -144,14 +144,13 @@ async function amendChanges() {
 }
 async function integrateBranch() {
 	if( await checkBranch() !== GIT_DESTINATION_BRANCH ) {
-		if( await switchBranch(GIT_DESTINATION_BRANCH) ) {
-			Promise.all([ buildBranch(GIT_DESTINATION_BRANCH), switchBranch(GIT_DESTINATION_BRANCH)]);
-		}
+		if( await switchBranch(GIT_DESTINATION_BRANCH) )
+			Promise.all([ buildBranch(GIT_DESTINATION_BRANCH), switchBranch(GIT_DESTINATION_BRANCH) ]);
 	}
 	await mergeBranch(GIT_MASTER_BRANCH, async e => {
 		if(e) Promise.reject(e);
 		Promise.all([ publishChanges(), switchBranch(GIT_MASTER_BRANCH) ])
-			.then(() => Promise.resolve(console.log(`Master integrated successfully.`)));
+			.then(() => console.log(`Master integrated successfully.`));
 	});
 }
 
@@ -165,9 +164,7 @@ function checkBranch() {
 	});
 }
 function switchBranch(branch) {
-	return new Promise(resolve => {
-		checkoutBranch(branch, e => resolve(e));
-	});
+	return new Promise(resolve => checkoutBranch(branch, e => resolve(e)));
 }
 function buildBranch(branch) {
 	return new Promise((resolve, reject) => {
