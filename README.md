@@ -1,6 +1,7 @@
 # AUTOMATED BUILD W/ GULP
 -------------------------
 
+
 ## To run the code on your computer:
 
 1. Install [Node.js v14.6.0](https://nodejs.org/en/).
@@ -10,12 +11,12 @@
 5. Clone the source repository to your computer: `git clone <url> <name>`, where `<url>` is the **GitHub** URL and `<name>` is the name of your choice.
 6. Go to the project directory: `cd <name>`.
 
-#### To run the tests, type: `gulp`/`.\gulp` (PC CMD/PowerShell) / `./gulp.sh` (Mac/Unix) in your command prompt.
-#### To run the tests and keep them running, type: `gulp --watch`/`.\gulp --watch` (PC CMD/PowerShell) / `./gulp.sh --watch` (Mac/Unix) in your command prompt.
-#### To open the build in a browser, type: `gulp run`/`.\gulp run` (PC CMD/PowerShell) / `./gulp.sh run` (Mac/Unix) in your command prompt.
-#### To commit the changes using Git, type: `gulp commit -m "<message>"`/`.\gulp commit -m "<message>` (PC CMD/PowerShell) / `./gulp.sh commit -m "<message>"` (Mac/Unix) in your command prompt, where `<message>` is your message of choice.
-#### To amend your previous commit, type: `gulp amend`/`.\gulp amend` (PC CMD/PowerShell) / `./gulp.sh amend` (Mac/Unix) in your command prompt.
-#### To integrate on the CI branch, type: `gulp integrate`/`.\gulp integrate` (PC CMD/PowerShell) / `./gulp.sh integrate` (Mac/Unix) in your command prompt.
+### Use `gulp` (PC CMD) / `.\gulp` (PC PowerShell) / `./gulp.sh` to run the tests. To:
+#### * run the tests and keep them running, add: `--watch`.
+#### * open the build in a browser, add: `run`.
+#### * commit the changes using Git, add: `commit -m "<message>"`, where `<message>` is the message of your choice.
+#### * amend your previous commit, add: `amend`.
+#### * integrate on the CI branch, add: `integrate`.
 
 ## To create this automated build:
 
