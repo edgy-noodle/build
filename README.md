@@ -10,12 +10,12 @@
 5. Clone the source repository to your computer: `git clone <url> <name>`, where `<url>` is the **GitHub** URL and `<name>` is the name of your choice.
 6. Go to the project directory: `cd <name>`.
 
-#### To run the tests, type: `gulp` (PC - cmd) / `.\gulp` (PC - PowerShell) / `./gulp.sh` (Mac/Unix) in your command prompt.
-#### To run the tests and keep them running, type: `gulp --watch` (PC - cmd) / `.\gulp --watch` (PC - PowerShell) / `./gulp.sh --watch` (Mac/Unix) in your command prompt.
-#### To open the build in a browser, type: `gulp run` (PC - cmd) / `.\gulp run` (PC - PowerShell) / `./gulp.sh run` (Mac/Unix) in your command prompt.
-#### To commit the changes using **Git**, type: `gulp commit -m "<message>"` (PC) / `.\gulp commit -m "<message>` (PC - PowerShell) / `./gulp.sh commit -m "<message>"` (Mac/Unix) in your command prompt, where <message> is your message of choice.
-#### To amend your previous commit, type: `gulp amend` (PC - cmd) / `.\gulp amend` (PC - PowerShell) / `./gulp.sh amend` (Mac/Unix) in your command prompt.
-#### To integrate on the CI branch, type: `gulp integrate` (PC - cmd) / `.\gulp integrate` (PC - PowerShell) / `./gulp.sh integrate` (Mac/Unix) in your command prompt.
+#### To run the tests, type: `gulp`/`.\gulp` (PC CMD/PowerShell) / `./gulp.sh` (Mac/Unix) in your command prompt.
+#### To run the tests and keep them running, type: `gulp --watch`/`.\gulp --watch` (PC CMD/PowerShell) / `./gulp.sh --watch` (Mac/Unix) in your command prompt.
+#### To open the build in a browser, type: `gulp run`/`.\gulp run` (PC CMD/PowerShell) / `./gulp.sh run` (Mac/Unix) in your command prompt.
+#### To commit the changes using Git, type: `gulp commit -m "<message>"`/`.\gulp commit -m "<message>` (PC CMD/PowerShell) / `./gulp.sh commit -m "<message>"` (Mac/Unix) in your command prompt, where `<message>` is your message of choice.
+#### To amend your previous commit, type: `gulp amend`/`.\gulp amend` (PC CMD/PowerShell) / `./gulp.sh amend` (Mac/Unix) in your command prompt.
+#### To integrate on the CI branch, type: `gulp integrate`/`.\gulp integrate` (PC CMD/PowerShell) / `./gulp.sh integrate` (Mac/Unix) in your command prompt.
 
 ## To create this automated build:
 
