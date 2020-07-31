@@ -2,7 +2,6 @@
 -------------------------
 
 ## To run the code on your computer:
-------------------------------------
 
 1. Install [Node.js v14.4.0](https://nodejs.org/en/).
 2. Install [Git](https://git-scm.com/).
@@ -11,15 +10,14 @@
 5. Copy the source repository to your computer.
 6. Go to the project directory: `cd "build v2.0"`.
 
-### To run the tests, type: `gulp` (PC) / `./gulp.sh` (Mac/Unix) in your command prompt.
-### To run the tests and keep them running, type: `gulp --watch` (PC) / `./gulp.sh --watch` (Mac/Unix) in your command prompt.
-### To open the build in a browser, type: `gulp run` (PC) / `./gulp.sh run` (Mac/Unix) in your command prompt.
-### To commit the changes using **Git**, type: `gulp commit -m "<message>"` (PC) / `./gulp.sh commit -m "<message>"` (Mac/Unix) in your command prompt, where <message> is your message of choice.
-### To amend your previous commit, type: `gulp commit -am` (PC) / `./gulp.sh commit -am` (Mac/Unix) in your command prompt.
-### To integrate on the CI branch, type: `gulp integrate` (PC) / `./gulp.sh integrate` (Mac/Unix) in your command prompt.
+#### To run the tests, type: `gulp` (PC) / `./gulp.sh` (Mac/Unix) in your command prompt.
+#### To run the tests and keep them running, type: `gulp --watch` (PC) / `./gulp.sh --watch` (Mac/Unix) in your command prompt.
+#### To open the build in a browser, type: `gulp run` (PC) / `./gulp.sh run` (Mac/Unix) in your command prompt.
+#### To commit the changes using **Git**, type: `gulp commit -m "<message>"` (PC) / `./gulp.sh commit -m "<message>"` (Mac/Unix) in your command prompt, where <message> is your message of choice.
+#### To amend your previous commit, type: `gulp commit -am` (PC) / `./gulp.sh commit -am` (Mac/Unix) in your command prompt.
+#### To integrate on the CI branch, type: `gulp integrate` (PC) / `./gulp.sh integrate` (Mac/Unix) in your command prompt.
 
 ## To create this automated build:
-----------------------------------
 
 1. Install [Node.js v14.4.0](https://nodejs.org/en/).
 2. Install [Git](https://git-scm.com/).
