@@ -130,35 +130,30 @@ async function commitChanges() {
 		await checkCommitRights();
 	addFiles(`./`)
 		.pipe(git.commit(GIT_MESSAGE)
-			.on(`end`, async () => {
-				Promise.resolve(await publishChanges(), console.log(`Files commited successfully.`))
-			})
+			.on(`end`, async () => Promise.resolve(await publishChanges(),
+				console.log(`Files commited successfully.`)))
 		);
 }
 async function amendChanges() {
 	await checkCommitRights();
 	addFiles(`./`)
 		.pipe(git.commit(null, { args: `--amend`, disableMessageRequirement: true, maxBuffer: Infinity })
-			.on(`end`, async () => {
-				await publishChanges();
-				Promise.resolve(console.log(`Commit amended successfully.`))
-			})
+			.on(`end`, async () => Promise.resolve(await publishChanges(),
+				console.log(`Commit amended successfully.`)))
 		);
 }
 async function integrateBranch() {
 	let currentBranch = await checkBranch();
 	if( currentBranch !== GIT_DESTINATION_BRANCH ) {
-		let e = await switchBranch(GIT_DESTINATION_BRANCH);
-		if(e) {
+		if( await switchBranch(GIT_DESTINATION_BRANCH) ) {
 			await buildBranch(GIT_DESTINATION_BRANCH);
-			Promise.resolve(await integrateBranch());
+			await switchBranch(GIT_DESTINATION_BRANCH);
 		}
 	}
 	await mergeBranch(GIT_MASTER_BRANCH, async e => {
 		if(e) Promise.reject(e);
-		await publishChanges();
-		await switchBranch(GIT_MASTER_BRANCH);
-		Promise.resolve(console.log(`Master integrated successfully.`));
+		Promise.all([ publishChanges(), switchBranch(GIT_MASTER_BRANCH) ])
+			.then(() => Promise.resolve(console.log(`Master integrated successfully.`)));
 	});
 }
 
