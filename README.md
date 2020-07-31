@@ -9,6 +9,7 @@
 4. Change the directory to the one you want to put the project in: in your command prompt, type `cd <directory>`.
 5. Clone the source repository to your computer: `git clone <url> <name>`, where `<url>` is the **GitHub** URL and `<name>` is the name of your choice.
 6. Go to the project directory: `cd <name>`.
+-------------------------
 
 #### Use `gulp` (PC CMD) / `.\gulp` (PC PowerShell) / `./gulp.sh` to run the tests. To:
 ###### * run the tests and keep them running, add: `--watch`.
@@ -16,6 +17,7 @@
 ###### * commit the changes using Git, add: `commit -m "<message>"`, where `<message>` is the message of your choice.
 ###### * amend your previous commit, add: `amend`.
 ###### * integrate on the CI branch, add: `integrate`.
+-------------------------
 
 ## To create this automated build:
 
