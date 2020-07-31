@@ -1,8 +1,8 @@
 # AUTOMATED BUILD W/ GULP
-=========================
+-------------------------
 
 ## To run the code on your computer:
------------------------------------
+------------------------------------
 
 1. Install [Node.js v14.4.0](https://nodejs.org/en/).
 2. Install [Git](https://git-scm.com/).
