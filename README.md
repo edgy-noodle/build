@@ -11,7 +11,7 @@
 6. Go to the project directory: `cd <name>`.
 -------------------------
 
-## Use `gulp` (PC CMD) / `.\gulp` (PC PowerShell) / `./gulp.sh` to run the tests. To:
+### Use `gulp` (PC CMD) / `.\gulp` (PC PowerShell) / `./gulp.sh` to run the tests. To:
 * run the tests and keep them running, add: `--watch`.
 * open the build in a browser, add: `run`.
 * commit the changes using Git, add: `commit -m "<message>"`, where `<message>` is the message of your choice.
