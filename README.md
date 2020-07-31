@@ -1,7 +1,6 @@
 # AUTOMATED BUILD W/ GULP
 -------------------------
 
-
 ## To run the code on your computer:
 
 1. Install [Node.js v14.6.0](https://nodejs.org/en/).
@@ -11,12 +10,12 @@
 5. Clone the source repository to your computer: `git clone <url> <name>`, where `<url>` is the **GitHub** URL and `<name>` is the name of your choice.
 6. Go to the project directory: `cd <name>`.
 
-### Use `gulp` (PC CMD) / `.\gulp` (PC PowerShell) / `./gulp.sh` to run the tests. To:
-#### * run the tests and keep them running, add: `--watch`.
-#### * open the build in a browser, add: `run`.
-#### * commit the changes using Git, add: `commit -m "<message>"`, where `<message>` is the message of your choice.
-#### * amend your previous commit, add: `amend`.
-#### * integrate on the CI branch, add: `integrate`.
+#### Use `gulp` (PC CMD) / `.\gulp` (PC PowerShell) / `./gulp.sh` to run the tests. To:
+###### * run the tests and keep them running, add: `--watch`.
+###### * open the build in a browser, add: `run`.
+###### * commit the changes using Git, add: `commit -m "<message>"`, where `<message>` is the message of your choice.
+###### * amend your previous commit, add: `amend`.
+###### * integrate on the CI branch, add: `integrate`.
 
 ## To create this automated build:
 
