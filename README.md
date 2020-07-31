@@ -11,12 +11,12 @@
 6. Go to the project directory: `cd <name>`.
 -------------------------
 
-#### Use `gulp` (PC CMD) / `.\gulp` (PC PowerShell) / `./gulp.sh` to run the tests. To:
-#### * run the tests and keep them running, add: `--watch`.
-#### * open the build in a browser, add: `run`.
-#### * commit the changes using Git, add: `commit -m "<message>"`, where `<message>` is the message of your choice.
-#### * amend your previous commit, add: `amend`.
-#### * integrate on the CI branch, add: `integrate`.
+## Use `gulp` (PC CMD) / `.\gulp` (PC PowerShell) / `./gulp.sh` to run the tests. To:
+* run the tests and keep them running, add: `--watch`.
+* open the build in a browser, add: `run`.
+* commit the changes using Git, add: `commit -m "<message>"`, where `<message>` is the message of your choice.
+* amend your previous commit, add: `amend`.
+* integrate on the CI branch, add: `integrate`.
 -------------------------
 
 ## To create this automated build:
