@@ -143,11 +143,9 @@ async function amendChanges() {
 		);
 }
 async function integrateBranch() {
-	let currentBranch = await checkBranch();
-	if( currentBranch !== GIT_DESTINATION_BRANCH ) {
+	if( await checkBranch() !== GIT_DESTINATION_BRANCH ) {
 		if( await switchBranch(GIT_DESTINATION_BRANCH) ) {
-			await buildBranch(GIT_DESTINATION_BRANCH);
-			await switchBranch(GIT_DESTINATION_BRANCH);
+			Promise.all([ buildBranch(GIT_DESTINATION_BRANCH), switchBranch(GIT_DESTINATION_BRANCH)]);
 		}
 	}
 	await mergeBranch(GIT_MASTER_BRANCH, async e => {
