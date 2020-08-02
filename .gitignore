@@ -16,6 +16,9 @@
 # Generated
 /dist/
 
+# Visual Studio Code
+*.code-workspace
+
 # Sublime
 *.sublime*
 
