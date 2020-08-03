@@ -26,8 +26,8 @@ const KARMA_CONFIG = {
 	files: [ SPEC_FILES, SRC_JS_FILES ],
 	exclude: [],
 	preprocessors: {
-			"spec/**/*.js": [ `commonjs` ],
-			"src/javascript/**/*.js": [ `commonjs`, `coverage` ],
+		"spec/**/*.js": [ `commonjs` ],
+		"src/javascript/**/*.js": [ `commonjs`, `coverage` ],
 	},
 	reporters: [ `kjhtml`, `progress`, `coverage` ],
 	jasmineHtmlReporter: { suppressAll: true },
@@ -185,7 +185,7 @@ async function checkCommitRights() {
 }
 async function publishChanges() {
 	let branch = await checkBranch();
-	pushBranch(branch, e => { 
+	pushBranch(branch, e => {
 		if(e) Promise.reject(e);
 		Promise.resolve(console.log(`Changes published successfully.`));
 	});
