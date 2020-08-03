@@ -77,7 +77,7 @@ function cleanDist() {
 function buildDist() {
 	return new Promise((resolve, reject) => {
 		mkDir(DIST_DIR, e => { if(e) reject(e) });
-		src(SRC_CONTENT_FILES)
+		src([ SRC_CONTENT_FILES, `!${SRC_CONTENT_FILES}.scss` ])
 			.pipe(dest(DIST_DIR))
 			.on(`finish`, () => resolve(console.log(`Distribution directory built successfully.`)));
 	});
