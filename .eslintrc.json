@@ -5,6 +5,10 @@
         "es6": true,
         "node": true
     },
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
     "extends": "eslint:recommended",
     "globals": {
         "afterAll": false,
@@ -15,9 +19,6 @@
         "expect": false,
         "it": false,
         "xit": false
-    },
-    "parserOptions": {
-        "ecmaVersion": 2018
     },
     "rules": {
         "arrow-spacing": 1,

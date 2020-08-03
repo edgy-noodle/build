@@ -1,16 +1,17 @@
 `use strict`;
 process.on(`unhandledRejection`, e => { throw new Error(e) });
 
-const { series, src, dest } = require(`gulp`);
-const eslint = require(`gulp-eslint`);
-const karma = require(`karma`);
-const fs = require(`fs`);
-const sass = require(`gulp-sass`);
-const browserify = require(`browserify`);
-const source = require(`vinyl-source-stream`);
-const http = require(`http`);
-const git = require(`gulp-git`);
+import gulp from "gulp";
+import eslint from "gulp-eslint";
+import sass from "gulp-sass";
+import karma from "karma";
+import fs from "fs";
+import browserify from "browserify";
+import source from "vinyl-source-stream";
+import http from "http";
+import git from "gulp-git";
 
+const { series, src, dest } = gulp;
 const SRC_CONTENT_FILES = `src/content/**/*`;
 const SRC_JS_FILES = `src/javascript/**/*.js`;
 const SPEC_FILES = `spec/**/*.js`;
@@ -23,28 +24,32 @@ const KARMA_WATCH = process.argv.includes(`--watch`);
 const KARMA_CONFIG = {
 	frameworks: [ `jasmine`, `commonjs` ],
 	files: [ SPEC_FILES, SRC_JS_FILES ],
-  exclude: [],
-  preprocessors: {
-		'spec/**/*.js': [ `commonjs` ],
-		'src/javascript/**/*.js': [ `commonjs`, `coverage` ],
-  },
-  reporters: [ `kjhtml`, `progress`, `coverage` ],
-  jasmineHtmlReporter: { suppressAll: true },
-  port: 9876,
-  colors: true,
-  autoWatch: KARMA_WATCH ? true : false,
-  browsers: [ `Chrome`, `Firefox` ],
-  singleRun: !KARMA_WATCH ? true : false,
-  concurrency: Infinity
+	exclude: [],
+	preprocessors: {
+		"spec/**/*.js": [ `commonjs` ],
+		"src/javascript/**/*.js": [ `commonjs`, `coverage` ],
+	},
+	reporters: [ `kjhtml`, `progress`, `coverage` ],
+	jasmineHtmlReporter: { suppressAll: true },
+	port: 9876,
+	colors: true,
+	autoWatch: KARMA_WATCH ? true : false,
+	browsers: [ `Chrome`, `Firefox` ],
+	singleRun: !KARMA_WATCH ? true : false,
+	concurrency: Infinity
 };
 
 function checkNode() {
 	return new Promise((resolve, reject) => {
-		let expected = `v${require(`./package.json`).engines.node}`;
-		let actual = process.version;
-		if( actual !== expected )
-			reject( new Error(`Expected Node version ${expected}, but was ${actual}.`) );
-		resolve(console.log(`Node version correct.`));
+		readFile(`package.json`, (e, file) => {
+			if(e) throw new Error(e);
+			let pkg = JSON.parse(file);
+			let expected = `v${pkg.engines.node}`;
+			let actual = process.version;
+			if( actual !== expected )
+				reject( new Error(`Expected Node version ${expected}, but was ${actual}.`) );
+			resolve(console.log(`Node version correct.`));
+		});
 	});
 }
 function lintJS() {
@@ -59,7 +64,7 @@ function testJS() {
 		let server = new karma.Server(KARMA_CONFIG, e => { if(e) reject(e) });
 		server.start();
 		if( !KARMA_WATCH )
-			server.on('run_complete', () => resolve(server.stop(), console.log(`Tests completed successfully.`)));
+			server.on(`run_complete`, () => resolve(server.stop(), console.log(`Tests completed successfully.`)));
 	});
 }
 
@@ -80,7 +85,7 @@ function buildDist() {
 function buildCSS() {
 	return new Promise((resolve, reject) => {
 		src(`${SRC_CONTENT_FILES}.scss`)
-			.pipe(sass().on('error', () => reject(sass.logError)))
+			.pipe(sass().on(`error`, () => reject(sass.logError)))
       .pipe(dest(DIST_DIR))
       .on(`finish`, () => resolve(console.log(`CSS built successfully.`)));
 	});
@@ -108,7 +113,7 @@ function hostServer() {
 function serverResponse(res, file) {
 	return new Promise((resolve, reject) => {
 		let type = file.slice( file.indexOf(`.`) + 1 );
-		res.writeHead(200, { 'Content-Type': type === `js` ?
+		res.writeHead(200, { "Content-Type": type === `js` ?
 			`application/javascript` : `text/${type}`});
 		readFile(`${DIST_DIR}${file}`, (e, data) => {
 			if(e) reject(e);
@@ -180,7 +185,7 @@ async function checkCommitRights() {
 }
 async function publishChanges() {
 	let branch = await checkBranch();
-	pushBranch(branch, e => { 
+	pushBranch(branch, e => {
 		if(e) Promise.reject(e);
 		Promise.resolve(console.log(`Changes published successfully.`));
 	});
@@ -218,8 +223,8 @@ function pushBranch(branch, cb) {
 	git.push(`origin`, branch, { maxBuffer: Infinity }, e => cb(e));
 }
 
-exports.default = defaultTask;
-exports.run = series( cleanDist, buildDist, buildApp, buildCSS, hostServer );
-exports.commit = commitChanges;
-exports.amend = amendChanges;
-exports.integrate = series( defaultTask, integrateBranch );
+export { defaultTask as default };
+export { commitChanges as commit };
+export { amendChanges as amend };
+export const integrate = series( defaultTask, integrateBranch );
+export const run = series( cleanDist, buildDist, buildApp, buildCSS, hostServer );
